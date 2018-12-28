@@ -67,7 +67,13 @@ app.get('/about', (req, res)=>{
 app.get('/about2', (req, res)=>{
     res.send('<h1>About page!</h1>');
 });
-
+app.get('/project', (req, res)=>{
+    res.render('project',{
+        pageTitle: 'project Page',
+        pageDetail: 'project Page Detail',
+        currentYear: new Date().getFullYear() + 1 
+    });
+});
 app.get('/bad', (req, res)=>{
     res.send({
         status: 'error',
